@@ -7,15 +7,32 @@
 <?php
     include_once '../connect.php';
     if(isset($_GET['idTL'])){
-        // $idTL = $_GET['idTL'];
+        $idTL = $_GET['idTL'];
 
-        $sql = "Select * from theloai where idTL = ".$_GET['idTL'];
+        $sql = "Select * from theloaitin where idTL = ".$_GET['idTL'];
     }
     $result = mysqli_query($connect, $sql);
     $rows = mysqli_fetch_array($result);
-
+    if(isset($_POST['TenTL']) && isset($_POST['ThuTu']) && isset($_POST['AnHien'])){
+        $tenTL = $_POST['TenTL'];
+        $thutu = $_POST['ThuTu'];
+        $anhien = $_POST['AnHien'];
+        $icon=$_FILES['image']['name'];
+        $anhminhhoa_tmp=$_FILES['image']['tmp_name'];
+        move_uploaded_file($anhminhhoa_tmp,"../image/".$icon);
     
-?>
+    if($icon ==""){
+        $sql = "UPDATE `theloaitin` SET `TenTL`='".$tenTL."',`ThuTu`='".$thutu."',`AnHien`='".$anhien."' WHERE idTL = ".$idTL.";";
+    }else{
+        $sql = "UPDATE `theloaitin` SET `TenTL`='".$tenTL."',`ThuTu`='".$thutu."',`AnHien`='".$anhien."',`icon`='".$icon."' WHERE idTL = ".$idTL.";";
+    }
+
+    if (mysqli_query($connect, $sql)) {
+        echo "<script language='javascript'>alert('sua thanh cong');";
+        echo "location.href='theloai.php';</script>";
+    }
+}
+    ?>
 <body>
     <form action="" method="post" enctype="multipart/form-data" name="form1">
         <table align="left"  width="400">
@@ -59,6 +76,7 @@
         </tr>
         <tr>
             <td align="right">icon</td>
+            <img src="../image/<?php echo $rows['icon'] ?>" alt="">
             <td>
                 <input type="file" name="image" id="anh" />
                 

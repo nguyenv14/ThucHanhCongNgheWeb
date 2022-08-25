@@ -17,7 +17,7 @@
 </tr>
 <?php 
         //truy vấn câu lệnh sql
-		$sql= "select * from theloai";
+		$sql= "select * from theloaitin";
 		$results = mysqli_query($connect,$sql);
         
         while( ($rows = mysqli_fetch_assoc($results))!= NULL )

@@ -3,7 +3,7 @@
 		// upload hinh anh	
 	$icon=$_FILES['image']['name'];
     $anhminhhoa_tmp=$_FILES['image']['tmp_name'];
-    move_uploaded_file($anhminhhoa_tmp,"image/".$icon);
+    move_uploaded_file($anhminhhoa_tmp,"../image/".$icon);
 
 
     if(isset($_POST['TenTL']) && isset($_POST['ThuTu']) && isset($_POST['AnHien'])){
@@ -15,7 +15,7 @@
     }
    
     //truy vấn
-	$sl = "insert into theloai (TenTL,ThuTu,AnHien,icon) Value('$theloai','$thutu','$an','$icon')";
+	$sl = "insert into theloaitin (TenTL,ThuTu,AnHien,icon) Value('$theloai','$thutu','$an','$icon')";
     
 	if(mysqli_query($connect,$sl))
 	{
