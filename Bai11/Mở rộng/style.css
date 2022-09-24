@@ -1,0 +1,6 @@
+span.page-link{
+    cursor: pointer;
+}
+.pagination{
+    justify-content: center;
+}

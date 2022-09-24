@@ -5,7 +5,7 @@
 <title>Untitled Document</title>
 </head>
 
-<body><form id="form1" name="form1" method="post" action="dangnhap_xuly.php">
+<body><form id="form1" name="form1" method="POST" action="action.php">
 <table width="300" border="1" align="left">
 <tr>
 <td>Username:</td>
