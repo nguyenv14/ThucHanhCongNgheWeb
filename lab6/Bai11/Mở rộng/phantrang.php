@@ -44,29 +44,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
-function fetch_data1(page1){
-        $.ajax({
-            url: "xuly.php",
-            method: "POST",
-            data:{
-                page1: page1
-            },
-            success:function(data){
-                $("#get-data").html(data);
-            }
-        });
-    }
+// function fetch_data1(page1){
+//         $.ajax({
+//             url: "xuly.php",
+//             method: "POST",
+//             data:{
+//                 page1: page1
+//             },
+//             success:function(data){
+//                 $("#get-data").html(data);
+//             }
+//         });
+//     }
     
-    $(document).on("click", "#myselect", function(){
-	$("#myselect").click(function() {
+//     $(document).on("click", "#myselect", function(){
+// 	$("#myselect").click(function() {
 
-		// var selectedVal = $("#myselect option:selected").text();
-		var page1 = $("#myselect option:selected").val();
-        // console.log(page1);
-		// alert("Hi, your favorite programming language is " + selectedVal);
-        fetch_data1(page1);
-	});
-});
+// 		// var selectedVal = $("#myselect option:selected").text();
+// 		var page1 = $("#myselect option:selected").val();
+//         // console.log(page1);
+// 		// alert("Hi, your favorite programming language is " + selectedVal);
+//         fetch_data1(page1);
+// 	});
+// });
 
     function fetch_data(page){
         $.ajax({
